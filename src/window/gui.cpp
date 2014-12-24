@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <curses.h>
+#include <ncurses.h>
 #include <stdlib.h>
 
 #include "gui.h"
@@ -27,7 +27,7 @@ void Gui::DrawMenuBar(WINDOW *menubar){
 	wbkgd(menubar,COLOR_PAIR(2));
 	waddstr(menubar,"eports");
 };
-WINDOW Gui::**DrawMenu(int start_col){
+WINDOW **Gui::DrawMenu(int start_col){
 	WINDOW **items;
 	items=(WINDOW **)malloc(9*sizeof(WINDOW *));
 	items[0]=newwin(10,19,1,start_col);
@@ -155,4 +155,5 @@ Gui::Gui(){
 
 Gui::~Gui(){
 	printf("Delete Gui ...\n");
+}
 }

@@ -3,18 +3,21 @@
 #ifndef WINDOW_GUI
 #define WINDOW_GUI
 #define ESC 0x1B
+#define ENTER 10
+#define ESCAPE 27
+#define BACKGROUND 1
+
 
 namespace net_spice{
 
 class Gui
 {
 private:
-	void init_curses();
-	void draw_menubar(WINDOW *menubar);
-	WINDOW **draw_menu(int start_col);
-	int scroll_menu(WINDOW **items,int count,int menu_start_col);
-	void delete_menu(WINDOW **items,int count);
-	void ini_nav();
+	void DrawMenuBar(WINDOW *menubar);
+	WINDOW **DrawMenu(int start_col);
+	int ScrollMenu(WINDOW **items,int count,int menu_start_col);
+	void DeleteMenu(WINDOW **items,int count);
+	void InitNav();
 public:
 	void Loop();
 	Gui();
