@@ -1,8 +1,8 @@
 #ncourses options
-NC=-lmenu -lncurses
+NC=-lform -lmenu -lncurses
 # Object files to either reference or create
 SRC_W=src/window
-OBJECTS=main.o $(SRC_W)/gui.o
+OBJECTS=main.o $(SRC_W)/gui.o $(SRC_W)/project_form.o
 # The executable file that will be created at the end
 EXEC=net-spice.out
 # The flags to use for compilation

@@ -2,6 +2,7 @@
 #include <ncurses.h>
 #include <stdlib.h>
 
+#include "project_form.h"
 #include "gui.h"
 
 namespace net_spice {
@@ -117,11 +118,11 @@ namespace net_spice {
         menu_items = this->DrawProjectMenu(0);
         selected_item = this->ScrollMenu(menu_items,8,10);
         this->DeleteMenu(menu_items,9);
+        ProjectForm *form = new ProjectForm();
+        
         switch (selected_item) {
-            case -1:
-                wprintw(messagebar,"You haven't selected any item.");
-                break;
             case 0:
+                form->DrawForm();
                 wprintw(messagebar,"NEW PROJECT.");
                 break;
             case 1:
