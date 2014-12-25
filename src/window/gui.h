@@ -9,20 +9,25 @@
 
 
 namespace net_spice{
-
-class Gui
-{
-private:
-	void DrawMenuBar(WINDOW *menubar);
-	WINDOW **DrawMenu(int start_col);
-	int ScrollMenu(WINDOW **items,int count,int menu_start_col);
-	void DeleteMenu(WINDOW **items,int count);
-	void InitNav();
-public:
-	void Loop();
-	Gui();
-	~Gui();	
-};
-
+    
+    class Gui
+    {
+    private:
+        void DrawMenuBar(WINDOW *menubar);
+        WINDOW **DrawProjectMenu(int start_col);
+        WINDOW **DrawContactMenu(int start_col);
+        WINDOW **DrawReportMenu(int start_col);
+        int ScrollMenu(WINDOW **items,int count,int menu_start_col);
+        void DeleteMenu(WINDOW **items,int count);        
+        void ProjectDropDownMenu(WINDOW *messagebar);
+        void ContactDropDownMenu(WINDOW *messagebar);
+        void ReportDropDownMenu(WINDOW *messagebar);
+        void InitNav();
+    public:
+        void Loop();
+        Gui();
+        ~Gui();	
+    };
+    
 }
 #endif  // WINDOW_GUI
